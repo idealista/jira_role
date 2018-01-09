@@ -1,0 +1,15 @@
+---
+- name: JIRA | Install
+  include: install.yml
+  tags:
+    - install
+
+- name: JIRA | Config
+  include: config.yml
+  tags:
+    - config
+
+- name: JIRA | Service
+  include: service.yml
+  tags:
+    - service

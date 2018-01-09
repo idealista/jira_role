@@ -1,0 +1,51 @@
+---
+
+- name: JIRA | Ensure JIRA group
+  group:
+    name: "{{ jira_group }}"
+
+- name: JIRA | Ensure JIRA user
+  user:
+    name: "{{ jira_user }}"
+    group: "{{ jira_group }}"
+    shell: /bin/bash
+
+- name: JIRA | Create path for JIRA's folders
+  file:
+    path: "{{ item }}"
+    state: directory
+    owner: "{{ jira_user }}"
+    group: "{{ jira_group }}"
+    mode: 0755
+  with_items:
+    - "{{ jira_home }}"
+    - "{{ jira_download_dir }}"
+    - "{{ jira_installation_dir }}"
+
+- name: JIRA | Link attachments folder in case not using default one
+  file:
+    src: "{{ jira_home }}/data/attachments"
+    dest: "{{ jira_attachments_dir }}"
+    state: link
+  when: jira_attachments_dir != "{{ jira_home }}/data/attachments"
+
+- name: JIRA | Download package
+  get_url:
+    dest: "{{ jira_download_dir }}/{{ jira_package }}"
+    url: "{{ jira_installation_url }}"
+    owner: "{{ jira_user }}"
+    group: "{{ jira_group }}"
+  register: jira_downloaded
+
+- name: JIRA | Unarchive package
+  unarchive:
+    src: "{{ jira_download_dir }}/{{ jira_package }}"
+    dest: "{{ jira_installation_dir }}"
+    remote_src: yes
+    extra_opts: --strip-components=1
+    owner: "{{ jira_user }}"
+    group: "{{ jira_group }}"
+    mode: 0755
+  when: jira_downloaded.changed
+  tags:
+    - skip_ansible_lint

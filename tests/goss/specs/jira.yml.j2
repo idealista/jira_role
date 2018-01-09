@@ -1,0 +1,19 @@
+http:
+  http://localhost:8080/:
+    status: 200
+{% if jira_jmx_enabled %}
+
+port:
+  tcp:{{ jira_jmx_port }}:
+    listening: true
+
+{% endif %}
+group:
+  {{ jira_group }}:
+    exists: true
+
+user:
+  {{ jira_user }}:
+    exists: true
+    groups:
+      - {{ jira_group }}

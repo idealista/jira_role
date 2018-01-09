@@ -1,0 +1,62 @@
+---
+- name: JIRA | Template Jira environment configuration
+  template:
+    src: bin/setenv.sh.j2
+    dest: "{{ jira_installation_dir }}/bin/setenv.sh"
+    backup: yes
+    mode: 0755
+    owner: "{{ jira_user }}"
+    group: "{{ jira_group }}"
+  notify: restart jira
+
+- name: JIRA | Template server configuration
+  template:
+    src: conf/server.xml.j2
+    dest: "{{ jira_installation_dir }}/conf/server.xml"
+    backup: yes
+    mode: 0755
+    owner: "{{ jira_user }}"
+    group: "{{ jira_group }}"
+  notify: restart jira
+
+- name: JIRA | Template database configuration
+  template:
+    src: conf/dbconfig.xml.j2
+    dest: "{{ jira_home }}/dbconfig.xml"
+    backup: yes
+    mode: 0644
+    owner: "{{ jira_user }}"
+    group: "{{ jira_group }}"
+  when: jira_database_configuration
+  notify: restart jira
+
+- name: JIRA | Template daemon script
+  template:
+    src: init.d/jira.service.j2
+    dest: /lib/systemd/system/jira.service
+    mode: 0644
+    owner: "{{ jira_user }}"
+    group: "{{ jira_group }}"
+  notify: restart jira
+
+- name: JIRA | Copy extra files (provided by playbooks)
+  copy:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    mode: "{{ item.mode }}"
+    owner: "{{ jira_user }}"
+    group: "{{ jira_group }}"
+  notify: restart jira
+  with_items: "{{ jira_extra_copy_files }}"
+  when: jira_extra_copy_files is defined
+
+- name: JIRA | Template extra files (provided by playbooks)
+  template:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    mode: "{{ item.mode }}"
+    owner: "{{ jira_user }}"
+    group: "{{ jira_group }}"
+  notify: restart jira
+  with_items: "{{ jira_extra_template_files }}"
+  when: jira_extra_template_files is defined

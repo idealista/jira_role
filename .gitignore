@@ -1,0 +1,7 @@
+# Retry files after playbook failures
+*.retry
+
+# Tests folders
+*.molecule
+*.cache
+*.vagrant

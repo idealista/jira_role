@@ -1,0 +1,9 @@
+---
+jira_jvm_minimum_memory: "512m"
+jira_jvm_maximum_memory: "1536m"
+
+# Java installation
+java_implementation: oraclejdk
+
+jira_jmx_enabled: true
+jira_jmx_port: 1099

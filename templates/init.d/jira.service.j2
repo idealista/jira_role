@@ -1,0 +1,14 @@
+[Unit]
+Description=Atlassian JIRA
+After=network.target
+
+[Service]
+Type=forking
+Restart=on-failure
+PIDFile={{ jira_installation_dir }}/work/catalina.pid
+User={{ jira_user }}
+ExecStart={{ jira_installation_dir }}/bin/start-jira.sh
+ExecStop={{ jira_installation_dir }}/bin/stop-jira.sh
+
+[Install]
+WantedBy=multi-user.target
