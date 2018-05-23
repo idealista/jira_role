@@ -13,18 +13,16 @@ env:
 services:
   - docker
 
+before_install:
+  - sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1
+  - sudo sysctl -w net.ipv6.conf.default.disable_ipv6=1
+  - ip addr
+
 install:
   - pip install ansible==${ansible_version}
   - pip install molecule==1.25.0
   - pip install ansible-lint==3.4.20
   - pip install docker
-
-before_script:
-  # Add an IPv6 config - see the corresponding Travis issue
-  # https://github.com/travis-ci/travis-ci/issues/8361
-  - if [ "${TRAVIS_OS_NAME}" == "linux" ]; then
-      sudo sh -c 'echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6';
-    fi
 
 script:
   - molecule test --driver docker
