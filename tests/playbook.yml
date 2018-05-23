@@ -9,3 +9,6 @@
         state: present
     - command: netstat -tulpn
       changed_when: false
+      register: red
+    - debug:
+        var: red
