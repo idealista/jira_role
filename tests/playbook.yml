@@ -8,3 +8,4 @@
         name: net-tools
         state: present
     - command: netstat -tulpn
+      changed_when: false
