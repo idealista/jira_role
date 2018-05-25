@@ -2,8 +2,7 @@
 version: 2
 jobs:
   build:
-    docker:
-      - image: circleci/python:2.7.14-stretch
+    machine: true
     working_directory: ~/jira-role
 
     steps:
