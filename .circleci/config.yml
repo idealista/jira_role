@@ -1,0 +1,19 @@
+---
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/python:2.7.14-stretch
+    working_directory: ~/bitbucket-role
+
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run:
+          name: install dependencies
+          command: |
+            pip install -r .circleci/requirements.txt --user
+      - run:
+          name: run tests
+          command: |
+            molecule test --driver docker

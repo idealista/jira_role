@@ -3,12 +3,3 @@
   roles:
     - java
     - jira-role
-  post_tasks:
-    - apt:
-        name: net-tools
-        state: present
-    - command: netstat -tulpn
-      changed_when: false
-      register: red
-    - debug:
-        var: red
