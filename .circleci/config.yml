@@ -4,7 +4,7 @@ jobs:
   build:
     docker:
       - image: circleci/python:2.7.14-stretch
-    working_directory: ~/bitbucket-role
+    working_directory: ~/jira-role
 
     steps:
       - checkout
