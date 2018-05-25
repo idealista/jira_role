@@ -2,11 +2,13 @@
 version: 2
 jobs:
   build:
-    machine: true
+    docker:
+      - image: circleci/python:2.7.15-stretch
     working_directory: ~/jira-role
 
     steps:
       - checkout
+      - setup_remote_docker
       - run:
           name: install dependencies
           command: |
