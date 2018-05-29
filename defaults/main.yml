@@ -6,7 +6,7 @@ jira_home: /var/atlassian/jira
 jira_download_dir: /jiradownload
 jira_installation_dir: /opt/atlassian/jira
 jira_attachments_dir: "{{ jira_home }}/data/attachments"
-jira_version: 7.6.2
+jira_version: 7.9.2
 
 # Configuration
 jira_jvm_support_recommended_args: "-Datlassian.plugins.enable.wait=300"

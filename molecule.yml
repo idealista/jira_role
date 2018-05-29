@@ -64,6 +64,8 @@ docker:
         - jira
       image: geerlingguy/docker-debian9-ansible
       image_version: latest
+      environment:
+        TMPDIR: /root/
       port_bindings:
         8080: 8080
       privileged: True
