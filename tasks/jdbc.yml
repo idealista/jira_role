@@ -1,0 +1,6 @@
+---
+- name: JIRA | MySQL JDBC connector
+  include: mysql-jdbc.yml
+  when: (jira_database_type == 'mysql')
+  tags:
+    - mysql-jdbc
