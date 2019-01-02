@@ -21,6 +21,7 @@ jira_connector_port: 8080
 jira_proxy_name:
 jira_context_path:
 jira_database_configuration: false
+jira_database_type: 'oracle'
 # Sample jira_extra_copy_files:
 # - {src: files/your_file.properties, dest: jira_home/your_file.properties, mode: 0644}
 # Sample jira_extra_template_files:
