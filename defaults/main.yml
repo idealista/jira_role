@@ -21,11 +21,19 @@ jira_connector_port: 8080
 jira_proxy_name:
 jira_context_path:
 jira_database_configuration: false
-jira_database_type: 'oracle'
 # Sample jira_extra_copy_files:
 # - {src: files/your_file.properties, dest: jira_home/your_file.properties, mode: 0644}
 # Sample jira_extra_template_files:
 # - {src: templates/your_template.properties, dest: jira_home/your_template.properties, mode: 0644}
+# Sample MySQL JDBC configuration:
+#   jira_database_configuration: true
+#   jira_database_type: 'mysql'
+#   jira_database_driver_class: 'com.mysql.jdbc.Driver'
+#   jira_database_username: 'jirauser'
+#   jira_database_password: 'XXXXXX'
+#   jira_database_host: 'localhost'
+#   jira_database_port: 3306
+#   jira_database_name: 'jiradb'
 
 # Service
 jira_service_name: jira
