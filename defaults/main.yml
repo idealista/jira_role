@@ -7,6 +7,8 @@ jira_download_dir: /jiradownload
 jira_installation_dir: /opt/atlassian/jira
 jira_attachments_dir: "{{ jira_home }}/data/attachments"
 jira_version: 7.9.2
+jira_mysql_repo_url: 'http://repo.mysql.com/apt/debian/'
+jira_mysql_repo: "deb {{ jira_mysql_repo_url }} {{ ansible_distribution_release }} mysql-tools"
 
 # Configuration
 jira_jvm_support_recommended_args: "-Datlassian.plugins.enable.wait=300"

@@ -5,7 +5,7 @@
     state: present
 
 - apt_repository:
-    repo:         deb http://repo.mysql.com/apt/debian/ {{ ansible_distribution_release }} mysql-tools
+    repo:         "{{ jira_mysql_repo }}"
     state:        present
     filename:     mysql
     update_cache: yes
