@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/) and [Keep a changelog](https://github.com/olivierlacan/keep-a-changelog).
 
 ## [Unreleased](https://github.com/idealista/jira-role/tree/develop)
+### Fixed
+- *[#5](https://github.com/idealista/jira-role/issues/5) Using new Idealista's Java Role version to avoid 404 Java installation issue* @jperera
 
 ### Fixed
 - *Ability to configure and use a different DB engine than Oracle / Oracle10g. Full example provided for MySQL* @mmolinac
