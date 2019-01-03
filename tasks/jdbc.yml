@@ -1,4 +1,10 @@
 ---
+- name: JIRA | Gather JDBC specific variables
+  include_vars: "{{ item }}"
+  with_first_found:
+    - "{{ jira_database_type }}-vars.yml"
+  tags: jdbc-vars
+
 - name: JIRA | MySQL JDBC connector
   include: mysql-jdbc.yml
   when: (jira_database_type == 'mysql')
