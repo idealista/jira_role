@@ -5,6 +5,9 @@ This project adheres to [Semantic Versioning](http://semver.org/) and [Keep a ch
 
 ## [Unreleased](https://github.com/idealista/jira-role/tree/develop)
 
+### Fixed
+- *Ability to configure and use a different DB engine than Oracle / Oracle10g. Full example provided for MySQL* @mmolinac
+
 ## [1.0.2](https://github.com/idealista/jira-role/tree/1.0.2)
 [Full Changelog](https://github.com/idealista/jira-role/compare/1.0.1...1.0.2)
 ### Added
