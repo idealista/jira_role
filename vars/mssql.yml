@@ -1,0 +1,4 @@
+---
+jira_database_url: "jdbc:sqlserver://{{ jira_database_host }}:{{ jira_database_port }};databaseName={{ jira_database_name }}"
+jira_database_driver_class: 'com.microsoft.sqlserver.jdbc.SQLServerDriver'
+jira_database_validation_query: 'select 1'
