@@ -5,6 +5,8 @@ driver:
   name: docker
 lint:
   name: yamllint
+  options:
+    config-file: .yamllint
 platforms:
   - name: jira.cont
     groups:
