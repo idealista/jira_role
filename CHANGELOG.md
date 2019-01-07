@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/) and [Keep a changelog](https://github.com/olivierlacan/keep-a-changelog).
 
 ## [Unreleased](https://github.com/idealista/jira-role/tree/develop)
+
+### Changed
+- *[#11](https://github.com/idealista/jira-role/issues/11) Molecule v2 upgrade* @jperera
+
 ### Fixed
 - *[#5](https://github.com/idealista/jira-role/issues/5) Using new Idealista's Java Role version to avoid 404 Java installation issue* @jperera
 

@@ -26,7 +26,7 @@ These instructions will get you a copy of the role for your Ansible playbook. On
 Ansible 2.3.1.0 version installed.
 Inventory destination should be a Debian environment.
 
-For testing purposes, [Molecule](https://molecule.readthedocs.io/) (version 1.25) with [Vagrant](https://www.vagrantup.com/) as driver (with [landrush](https://github.com/vagrant-landrush/landrush) plugin) and [VirtualBox](https://www.virtualbox.org/) or [Docker](https://www.docker.com/) as provider.
+For testing purposes, [Molecule](https://molecule.readthedocs.io/) with [Docker](https://www.docker.com/) as driver.
 
 ### Installing
 
@@ -59,17 +59,10 @@ Look to the [defaults](defaults/main.yml) properties file to see the possible co
 
 ## Testing
 
-### Using Vagrant as provider
+```sh
+$ pipenv install -r test-requirements.txt --python 2.7
+$ pipenv run molecule test
 ```
-molecule test
-```
-
-### Using Docker as provider
-```
-molecule test --driver docker
-```
-
-See molecule.yml to check possible testing platforms. As a reminder, our tests are just compatible with Molecule 1.x
 
 ## Built With
 

@@ -21,7 +21,7 @@
 
     - name: Copy tests to remote
       template:
-        src: "{{ playbook_dir }}/specs/{{ item }}.j2"
+        src: "{{ playbook_dir }}/tests/{{ item }}.j2"
         dest: "/tmp/{{ item }}"
       with_items:
         - jira.yml
