@@ -2,5 +2,5 @@
 - name: Converge
   hosts: all
   roles:
-    - role: java-role
-    - role: jira-role
+    - role: java_role
+    - role: jira_role
