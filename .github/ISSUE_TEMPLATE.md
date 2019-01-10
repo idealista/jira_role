@@ -1,7 +1,7 @@
 <!--
 
 Have you read Idealista's Code of Conduct? By filling an Issue, you are expected to comply with it,
- including treating everyone with respect: https://github.com/idealista/jira-role/blob/master/.github/CODE_OF_CONDUCT.md
+ including treating everyone with respect: https://github.com/idealista/jira_role/blob/master/.github/CODE_OF_CONDUCT.md
 
 -->
 

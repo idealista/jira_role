@@ -3,16 +3,16 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/) and [Keep a changelog](https://github.com/olivierlacan/keep-a-changelog).
 
-## [Unreleased](https://github.com/idealista/jira-role/tree/develop)
+## [Unreleased](https://github.com/idealista/jira_role/tree/develop)
 
 ### Changed
-- *[#11](https://github.com/idealista/jira-role/issues/11) Molecule v2 upgrade* @jperera
+- *[#11](https://github.com/idealista/jira_role/issues/11) Molecule v2 upgrade* @jperera
 
 ### Fixed
-- *[#5](https://github.com/idealista/jira-role/issues/5) Using new Idealista's Java Role version to avoid 404 Java installation issue* @jperera
+- *[#5](https://github.com/idealista/jira_role/issues/5) Using new Idealista's Java Role version to avoid 404 Java installation issue* @jperera
 
-## [1.0.2](https://github.com/idealista/jira-role/tree/1.0.2)
-[Full Changelog](https://github.com/idealista/jira-role/compare/1.0.1...1.0.2)
+## [1.0.2](https://github.com/idealista/jira_role/tree/1.0.2)
+[Full Changelog](https://github.com/idealista/jira_role/compare/1.0.1...1.0.2)
 ### Added
 - *Added CircleCI integration* @jnogol
 
@@ -22,10 +22,10 @@ This project adheres to [Semantic Versioning](http://semver.org/) and [Keep a ch
 ### Fixed
 - *Using new Idealista's Java Role version to avoid 404 Java installation issue* @jnogol
 
-## [1.0.1](https://github.com/idealista/jira-role/tree/1.0.1)
-[Full Changelog](https://github.com/idealista/jira-role/compare/1.0.0...1.0.1)
+## [1.0.1](https://github.com/idealista/jira_role/tree/1.0.1)
+[Full Changelog](https://github.com/idealista/jira_role/compare/1.0.0...1.0.1)
 ### Fixed
 - *Using new Idealista's Java Role version to avoid 404 Java installation issue* @jnogol
 
-## [1.0.0](https://github.com/idealista/jira-role/tree/1.0.0)
+## [1.0.0](https://github.com/idealista/jira_role/tree/1.0.0)
 - *First version*
