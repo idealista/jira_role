@@ -1,0 +1,6 @@
+---
+jira_mysql_repo_url: 'http://repo.mysql.com/apt/debian/'
+jira_mysql_repo: "deb {{ jira_mysql_repo_url }} {{ ansible_distribution_release }} mysql-tools"
+jira_database_url: "jdbc:mysql://{{ jira_database_host }}:{{ jira_database_port }}/{{ jira_database_name }}?useUnicode=true&amp;characterEncoding=UTF8&amp;sessionVariables=default_storage_engine=InnoDB"
+jira_database_driver_class: 'com.mysql.jdbc.Driver'
+jira_database_validation_query: 'select 1'

@@ -5,14 +5,14 @@
   <delegator-name>default</delegator-name>
   <database-type>{{ jira_database_type }}</database-type>
   <jdbc-datasource>
-    <url>jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = {{ jira_database_host }})(PORT = {{ jira_database_port }})))(CONNECT_DATA = (SERVICE_NAME = {{ jira_database_service_name }})(SERVER = DEDICATED)))</url>
+    <url>{{ jira_database_url }}</url>
     <driver-class>{{ jira_database_driver_class }}</driver-class>
     <username>{{ jira_database_username }}</username>
     <password>{{ jira_database_password }}</password>
     <pool-min-size>20</pool-min-size>
     <pool-max-size>20</pool-max-size>
     <pool-max-wait>30000</pool-max-wait>
-    <validation-query>select 1 from dual</validation-query>
+    <validation-query>{{ jira_database_validation_query }}</validation-query>
     <min-evictable-idle-time-millis>60000</min-evictable-idle-time-millis>
     <time-between-eviction-runs-millis>300000</time-between-eviction-runs-millis>
     <pool-max-idle>20</pool-max-idle>

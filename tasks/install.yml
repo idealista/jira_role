@@ -49,3 +49,9 @@
   when: jira_downloaded.changed
   tags:
     - skip_ansible_lint
+
+- name: JIRA | Optional JDBC connectors
+  include: jdbc.yml
+  when: jira_database_configuration
+  tags:
+    - jdbc
