@@ -57,6 +57,8 @@ Use in a playbook:
 
 Look to the [defaults](defaults/main.yml) properties file to see the possible configuration properties.
 
+There are some variables in [vars](vars) folder that help with the database configuration. Overriding them could be a bit difficult due to [Ansible variable precedence](https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables.html#variable-precedence-where-should-i-put-a-variable) so, in case you need to set new values, our recommendation is to have a `vars` folder in your playbook folder, put there a vars file with your preferred values and include them in your main playbook with [include_vars](https://docs.ansible.com/ansible/latest/modules/include_vars_module.html).
+
 ## Testing
 
 ```sh

@@ -1,14 +1,21 @@
 [[source]]
-name = "pypi"
-url = "https://pypi.org/simple"
+
+url = "https://pypi.python.org/simple"
 verify_ssl = true
+name = "pypi"
+
 
 [dev-packages]
 
+
+
 [packages]
+
 ansible = "==2.4.5.0"
 molecule = "==2.10.1"
 docker-py = "==1.10.6"
 
+
 [requires]
+
 python_version = "2.7"
