@@ -16,4 +16,4 @@ jobs:
       - run:
           name: run tests
           command: |
-            molecule test --driver docker
+            molecule test
