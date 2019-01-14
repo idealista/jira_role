@@ -1,6 +1,6 @@
 ![Logo](https://raw.githubusercontent.com/idealista/jira_role/master/logo.gif)
 
-[![Build Status](https://travis-ci.org/idealista/jira_role.png)](https://travis-ci.org/idealista/jira_role)
+[![CircleCI](https://circleci.com/gh/idealista/jira_role.svg?style=svg)](https://circleci.com/gh/idealista/jira_role)
 
 # Jira Ansible role
 
@@ -84,7 +84,7 @@ See also the list of [contributors](https://github.com/idealista/jira_role/contr
 
 ## License
 
-![Apache 2.0 Licence](https://img.shields.io/hexpm/l/plug.svg)
+![Apache 2.0 License](https://img.shields.io/hexpm/l/plug.svg)
 
 This project is licensed under the [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0) license - see the [LICENSE](LICENSE) file for details.
 
