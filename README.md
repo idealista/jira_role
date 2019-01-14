@@ -1,6 +1,6 @@
-![Logo](https://raw.githubusercontent.com/idealista/jira-role/master/logo.gif)
+![Logo](https://raw.githubusercontent.com/idealista/jira_role/master/logo.gif)
 
-[![Build Status](https://travis-ci.org/idealista/jira-role.png)](https://travis-ci.org/idealista/jira-role)
+[![CircleCI](https://circleci.com/gh/idealista/jira_role.svg?style=svg)](https://circleci.com/gh/idealista/jira_role)
 
 # Jira Ansible role
 
@@ -23,17 +23,17 @@ These instructions will get you a copy of the role for your Ansible playbook. On
 
 ### Prerequisities
 
-Ansible 2.3.1.0 version installed.
+Ansible 2.4.5.0 version installed.
 Inventory destination should be a Debian environment.
 
-For testing purposes, [Molecule](https://molecule.readthedocs.io/) (version 1.25) with [Vagrant](https://www.vagrantup.com/) as driver (with [landrush](https://github.com/vagrant-landrush/landrush) plugin) and [VirtualBox](https://www.virtualbox.org/) or [Docker](https://www.docker.com/) as provider.
+For testing purposes, [Molecule](https://molecule.readthedocs.io/) with [Docker](https://www.docker.com/) as driver.
 
 ### Installing
 
 Create or add to your roles dependency file (e.g requirements.yml):
 
 ``` yml
-- src: idealista.jira-role
+- src: idealista.jira_role
   version: 1.0.0
   name: jira
 ```
@@ -57,19 +57,14 @@ Use in a playbook:
 
 Look to the [defaults](defaults/main.yml) properties file to see the possible configuration properties.
 
+There are some variables in [vars](vars) folder that help with the database configuration. Overriding them could be a bit difficult due to [Ansible variable precedence](https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables.html#variable-precedence-where-should-i-put-a-variable) so, in case you need to set new values, our recommendation is to have a `vars` folder in your playbook folder, put there a vars file with your preferred values and include them in your main playbook with [include_vars](https://docs.ansible.com/ansible/latest/modules/include_vars_module.html).
+
 ## Testing
 
-### Using Vagrant as provider
+```sh
+$ pipenv install -r test-requirements.txt --python 2.7
+$ pipenv run molecule test
 ```
-molecule test
-```
-
-### Using Docker as provider
-```
-molecule test --driver docker
-```
-
-See molecule.yml to check possible testing platforms. As a reminder, our tests are just compatible with Molecule 1.x
 
 ## Built With
 
@@ -77,7 +72,7 @@ See molecule.yml to check possible testing platforms. As a reminder, our tests a
 
 ## Versioning
 
-For the versions available, see the [tags on this repository](https://github.com/idealista/jira-role/tags).
+For the versions available, see the [tags on this repository](https://github.com/idealista/jira_role/tags).
 
 Additionaly you can see what change in each version in the [CHANGELOG.md](CHANGELOG.md) file.
 
@@ -85,11 +80,11 @@ Additionaly you can see what change in each version in the [CHANGELOG.md](CHANGE
 
 * **Idealista** - *Work with* - [idealista](https://github.com/idealista)
 
-See also the list of [contributors](https://github.com/idealista/jira-role/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/idealista/jira_role/contributors) who participated in this project.
 
 ## License
 
-![Apache 2.0 Licence](https://img.shields.io/hexpm/l/plug.svg)
+![Apache 2.0 License](https://img.shields.io/hexpm/l/plug.svg)
 
 This project is licensed under the [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0) license - see the [LICENSE](LICENSE) file for details.
 

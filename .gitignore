@@ -5,3 +5,6 @@
 *.molecule
 *.cache
 *.vagrant
+
+# Pipenv
+Pipfile*

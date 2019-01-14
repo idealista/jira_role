@@ -4,7 +4,7 @@ jobs:
   build:
     docker:
       - image: circleci/python:2.7.15-stretch
-    working_directory: ~/jira-role
+    working_directory: ~/jira_role
 
     steps:
       - checkout
@@ -16,4 +16,4 @@ jobs:
       - run:
           name: run tests
           command: |
-            molecule test --driver docker
+            molecule test

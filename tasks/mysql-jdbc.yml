@@ -1,0 +1,44 @@
+---
+- name: JIRA | MySQL Tools repo key
+  apt_key:
+    url: http://repo.mysql.com/RPM-GPG-KEY-mysql
+    state: present
+
+- name: JIRA | MySQL Tools APT repository
+  apt_repository:
+    repo: "{{ jira_mysql_repo }}"
+    update_cache: yes
+    filename: mysql
+    state: present
+  when: ( ansible_os_family == "Debian" )
+
+- name: JIRA | MySQL Connector
+  action: >
+    {{ ansible_pkg_mgr }} name=mysql-connector-java state=present
+
+- name: JIRA | Find JIRA installed MySQL connectors
+  find:
+    paths: "{{ jira_installation_dir }}/lib"
+    patterns: "mysql-connector-java-*.jar"
+    depth: 1
+  register: jira_mysql_installed_list
+
+- name: JIRA | Find available MySQL connectors
+  find:
+    paths: '/usr/share/java'
+    patterns: "mysql-connector-java-*.jar"
+    depth: 1
+  register: jira_mysql_available_list
+
+- name: JIRA | MySQL Connector placement in JIRA installation
+  command: "/bin/cp {{ jira_mysql_available_list.files[0].path }} {{ jira_installation_dir }}/lib"
+  when: jira_mysql_installed_list.matched == 0
+
+- name: JIRA | Install MySQL connector to JIRA installation
+  file:
+    dest: "{{ jira_installation_dir }}/lib"
+    owner: "{{ jira_user }}"
+    group: "{{ jira_group }}"
+    recurse: yes
+    mode: 0755
+  when: jira_mysql_installed_list.matched == 0
