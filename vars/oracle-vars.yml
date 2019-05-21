@@ -2,3 +2,4 @@
 jira_database_url: "jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = {{ jira_database_host }})(PORT = {{ jira_database_port }})))(CONNECT_DATA = (SERVICE_NAME = {{ jira_database_service_name }})(SERVER = DEDICATED)))"
 jira_database_driver_class: 'oracle.jdbc.OracleDriver'
 jira_database_validation_query: 'select 1 from dual'
+jira_database_validation_query_timeout: 3
