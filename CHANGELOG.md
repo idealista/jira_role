@@ -5,6 +5,12 @@ This project adheres to [Semantic Versioning](http://semver.org/) and [Keep a ch
 
 ## [Unreleased](https://github.com/idealista/jira_role/tree/develop)
 
+## [1.2.0](https://github.com/idealista/jira_role/tree/1.2.0)
+[Full Changelog](https://github.com/idealista/jira_role/compare/1.1.0...1.2.0)
+
+### Added
+- [#20](https://github.com/idealista/jira_role/issues/20) *Added recommended setting validation_query_timeout to dbconfig.xml* @mmolinac
+
 ## [1.1.0](https://github.com/idealista/jira_role/tree/1.1.0)
 [Full Changelog](https://github.com/idealista/jira_role/compare/1.0.2...1.1.0)
 

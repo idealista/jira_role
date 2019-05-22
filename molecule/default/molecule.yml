@@ -11,7 +11,7 @@ platforms:
   - name: jira.cont
     groups:
       - jira
-    image: geerlingguy/docker-debian9-ansible:latest
+    image: idealista/jdk:1.8.0_202-stretch-oraclejdk
     exposed_ports:
       - 8080/udp
       - 8080/tcp
