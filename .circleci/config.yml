@@ -12,7 +12,7 @@ jobs:
       - run:
           name: install dependencies
           command: |
-            sudo pip install -r .circleci/requirements.txt
+            sudo pip install -r test-requirements.txt
       - run:
           name: run tests
           command: |
