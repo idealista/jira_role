@@ -62,14 +62,31 @@ There are some variables in [vars](vars) folder that help with the database conf
 
 ## Testing
 
+nstall dependencies
+
 ```sh
-$ pipenv install -r test-requirements.txt --python 2.7
+$ pipenv sync
+```
+
+For more information read the [pipenv docs](https://pipenv-fork.readthedocs.io/en/latest/).
+
+### Testing
+
+```sh
 $ pipenv run molecule test
+```
+Note: if you want to add colorized output (as previous versions of molecule), you must [set these environm
+ent variables](https://www.jeffgeerling.com/blog/2020/getting-colorized-output-molecule-and-ansible-on-git
+hub-actions-ci):
+```
+ANSIBLE_FORCE_COLOR=1
+PY_COLOR=1
 ```
 
 ## Built With
-
-![Ansible](https://img.shields.io/badge/ansible-2.3.1.0-green.svg)
+![Ansible](https://img.shields.io/badge/ansible-4.0.0-green.svg)
+![Molecule](https://img.shields.io/badge/molecule-3.3.2-green.svg)
+![Goss](https://img.shields.io/badge/goss-0.3.16-green.svg)
 
 ## Versioning
 

@@ -5,6 +5,7 @@ jira_group: jira
 jira_home: /var/atlassian/jira
 jira_download_dir: /jiradownload
 jira_installation_dir: /opt/atlassian/jira
+jira_attachments_default_dir: "{{ jira_home }}/data/attachments"
 jira_attachments_dir: "{{ jira_home }}/data/attachments"
 jira_version: 7.9.2
 
