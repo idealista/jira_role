@@ -1,0 +1,25 @@
+---
+dist: xenial
+language: python
+python: "3.9"
+os: linux
+services:
+  - docker
+install:
+  - pip install pipenv
+  - pipenv sync
+env:
+  global:
+    - PY_COLOR=1
+    - ANSIBLE_FORCE_COLOR=1
+script:
+  - pipenv run molecule test --all
+
+notifications:
+  webhooks: https://galaxy.ansible.com/api/v1/notifications/
+  email:
+    if: branch = main
+    on_success: change
+    on_failure: always
+    recipients:
+      - desarrollo.benders@idealista.com

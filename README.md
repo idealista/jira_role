@@ -23,7 +23,7 @@ These instructions will get you a copy of the role for your Ansible playbook. On
 
 ### Prerequisities
 
-Ansible 2.4.5.0 version installed.
+Ansible > 2.8 version installed.
 Inventory destination should be a Debian environment.
 Java versions specified [here](https://confluence.atlassian.com/adminjiraserver/supported-platforms-938846830.html). All can be installed using [idealista's Java role](https://github.com/idealista/java_role).
 
