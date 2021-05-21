@@ -5,6 +5,11 @@ This project adheres to [Semantic Versioning](http://semver.org/) and [Keep a ch
 
 ## [Unreleased](https://github.com/idealista/jira_role/tree/develop)
 
+# Added
+- Updated tests
+- *[#25](https://github.com/idealista/jira_role/issues/25) Added template path variables
+- *[#25](https://github.com/idealista/jira_role/issues/25) Improved systemd config template
+
 ## [1.2.0](https://github.com/idealista/jira_role/tree/1.2.0)
 [Full Changelog](https://github.com/idealista/jira_role/compare/1.1.0...1.2.0)
 
