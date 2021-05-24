@@ -1,10 +1,14 @@
-# Retry files after playbook failures
-*.retry
+ 
+tests/playbook.retry
+tests/.cache
+__pycache__
+.pytest_cache
+.molecule
+.cache
 
-# Tests folders
-*.molecule
-*.cache
-*.vagrant
+*.iml
+.idea
+.project
 
-# Pipenv
-Pipfile*
+*.pyc
+**/.vscode

@@ -1,7 +1,7 @@
 ---
 - name: JIRA | Template Jira environment configuration
   template:
-    src: bin/setenv.sh.j2
+    src: "{{ jira_setenv_template_path }}"
     dest: "{{ jira_installation_dir }}/bin/setenv.sh"
     backup: yes
     mode: 0755
@@ -11,7 +11,7 @@
 
 - name: JIRA | Template server configuration
   template:
-    src: conf/server.xml.j2
+    src: "{{ jira_server_conf_template_path }}"
     dest: "{{ jira_installation_dir }}/conf/server.xml"
     backup: yes
     mode: 0755
@@ -21,7 +21,7 @@
 
 - name: JIRA | Template database configuration
   template:
-    src: conf/dbconfig.xml.j2
+    src: "{{ jira_db_conf_template_path }}"
     dest: "{{ jira_home }}/dbconfig.xml"
     backup: yes
     mode: 0644
@@ -32,7 +32,7 @@
 
 - name: JIRA | Template daemon script
   template:
-    src: init.d/jira.service.j2
+    src: "{{ jira_systemd_template_path }}"
     dest: /lib/systemd/system/jira.service
     mode: 0644
     owner: "{{ jira_user }}"

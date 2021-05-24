@@ -5,10 +5,15 @@ jira_group: jira
 jira_home: /var/atlassian/jira
 jira_download_dir: /jiradownload
 jira_installation_dir: /opt/atlassian/jira
+jira_attachments_default_dir: "{{ jira_home }}/data/attachments"
 jira_attachments_dir: "{{ jira_home }}/data/attachments"
 jira_version: 7.9.2
 
 # Configuration
+jira_setenv_template_path: bin/setenv.sh.j2
+jira_server_conf_template_path: conf/server.xml.j2
+jira_db_conf_template_path: conf/dbconfig.xml.j2
+jira_systemd_template_path: systemd/jira.service.j2
 jira_jvm_support_recommended_args: "-Datlassian.plugins.enable.wait=300"
 jira_required_args: "-Djava.awt.headless=true -Datlassian.standalone=JIRA -Dorg.apache.jasper.runtime.BodyContentImpl.LIMIT_BUFFER=true -Dmail.mime.decodeparameters=true -Dorg.dom4j.factory=com.atlassian.core.xml.InterningDocumentFactory"
 jira_jmx_enabled: false
@@ -39,3 +44,4 @@ jira_database_configuration: false
 jira_service_name: jira
 jira_service_state: started
 jira_service_enabled: true
+jira_service_max_nofiles: 16384
