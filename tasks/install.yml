@@ -27,7 +27,7 @@
     src: "{{ jira_home }}/data/attachments"
     dest: "{{ jira_attachments_dir }}"
     state: link
-  when: jira_attachments_dir != "{{ jira_home }}/data/attachments"
+  when: jira_attachments_dir != jira_attachments_default_dir
 
 - name: JIRA | Download package
   get_url:
