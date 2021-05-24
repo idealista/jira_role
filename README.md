@@ -35,7 +35,7 @@ Create or add to your roles dependency file (e.g requirements.yml):
 
 ``` yml
 - src: idealista.jira_role
-  version: 1.0.0
+  version: 1.3.0
   name: jira
 ```
 
