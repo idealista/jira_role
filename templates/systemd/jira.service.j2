@@ -5,10 +5,10 @@ After=network.target
 [Service]
 Type=forking
 Restart=on-failure
-PIDFile={{ jira_installation_dir }}/work/catalina.pid
+PIDFile={{ jira_installation_dir }}/{{ jira_package_dir }}/work/catalina.pid
 User={{ jira_user }}
-ExecStart={{ jira_installation_dir }}/bin/start-jira.sh
-ExecStop={{ jira_installation_dir }}/bin/stop-jira.sh
+ExecStart={{ jira_installation_dir }}/{{ jira_package_dir }}/bin/start-jira.sh
+ExecStop={{ jira_installation_dir }}/{{ jira_package_dir }}/bin/stop-jira.sh
 LimitNOFILE={{ jira_service_max_nofiles }}
 
 [Install]

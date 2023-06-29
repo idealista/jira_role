@@ -2,7 +2,7 @@
 - name: JIRA | Template Jira environment configuration
   template:
     src: "{{ jira_setenv_template_path }}"
-    dest: "{{ jira_installation_dir }}/bin/setenv.sh"
+    dest: "{{ jira_installation_dir }}/{{ jira_package_dir }}/bin/setenv.sh"
     backup: yes
     mode: 0755
     owner: "{{ jira_user }}"
@@ -12,7 +12,7 @@
 - name: JIRA | Template server configuration
   template:
     src: "{{ jira_server_conf_template_path }}"
-    dest: "{{ jira_installation_dir }}/conf/server.xml"
+    dest: "{{ jira_installation_dir }}/{{ jira_package_dir }}/conf/server.xml"
     backup: yes
     mode: 0755
     owner: "{{ jira_user }}"

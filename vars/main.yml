@@ -1,3 +1,5 @@
 ---
-jira_package: atlassian-jira-software-{{ jira_version }}.tar.gz
+jira_package_name: atlassian-jira-software
+jira_package_dir: "{{ jira_package_name }}-{{ jira_version }}-standalone"
+jira_package: "{{ jira_package_name }}-{{ jira_version }}.tar.gz"
 jira_installation_url: https://www.atlassian.com/software/jira/downloads/binary/{{ jira_package }}
