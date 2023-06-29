@@ -42,7 +42,6 @@
     src: "{{ jira_download_dir }}/{{ jira_package }}"
     dest: "{{ jira_installation_dir }}"
     remote_src: yes
-    extra_opts: --strip-components=1
     owner: "{{ jira_user }}"
     group: "{{ jira_group }}"
     mode: 0755
